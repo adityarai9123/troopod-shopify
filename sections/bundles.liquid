@@ -1,41 +1,61 @@
 {{ 'bundles.css' | asset_url | stylesheet_tag }}
 
-<section class="bundles">
+<section
+  class="bundles"
+  style="
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  "
+>
 
   <div class="page-width">
 
-    <h2>{{ section.settings.heading }}</h2>
+    <h2 class="bundles__title">
+      {{ section.settings.heading }}
+    </h2>
 
     <div class="bundles__grid">
 
-      {% for block in section.blocks %}
+      {% for block in section.blocks limit: 6 %}
 
-      <div class="bundle-card" {{ block.shopify_attributes }}>
+        {% assign product = block.settings.product %}
 
-        {% if block.settings.image != blank %}
-          {{
-            block.settings.image
-            | image_url: width:600
-            | image_tag:
-            loading:'lazy'
-          }}
+        {% if product != blank %}
+
+          <div class="bundle-card" {{ block.shopify_attributes }}>
+
+            {% if product.featured_image != blank %}
+              {{
+                product.featured_image
+                | image_url: width: 1200
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '400,600,800,1200',
+                  sizes: '(max-width:749px) 100vw, 50vw',
+                  alt: product.title
+              }}
+            {% endif %}
+
+            <div class="bundle-card__content">
+
+              <h3>{{ product.title }}</h3>
+
+              <p>{{ product.description | strip_html | truncate: 100 }}</p>
+
+              <span>{{ product.price | money }}</span>
+
+              <a
+                href="{{ product.url }}"
+                aria-label="View {{ product.title }}"
+              >
+                Shop Bundle
+              </a>
+
+            </div>
+
+          </div>
+
         {% endif %}
-
-        <div class="bundle-card__content">
-
-          <h3>{{ block.settings.title }}</h3>
-
-          <p>{{ block.settings.description }}</p>
-
-          <span>{{ block.settings.price }}</span>
-
-          <a href="{{ block.settings.link }}">
-            Shop Bundle
-          </a>
-
-        </div>
-
-      </div>
 
       {% endfor %}
 
@@ -54,6 +74,24 @@
       "id": "heading",
       "label": "Heading",
       "default": "Bundles"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 40
     }
   ],
   "blocks": [
@@ -62,39 +100,28 @@
       "name": "Bundle",
       "settings": [
         {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title",
-          "default": "Starter Bundle"
-        },
-        {
-          "type": "textarea",
-          "id": "description",
-          "label": "Description",
-          "default": "Everything you need to get started."
-        },
-        {
-          "type": "text",
-          "id": "price",
-          "label": "Price",
-          "default": "₹4999"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "Button Link"
+          "type": "product",
+          "id": "product",
+          "label": "Select Product"
         }
       ]
     }
   ],
+  "max_blocks": 6,
   "presets": [
     {
-      "name": "Bundles"
+      "name": "Bundles",
+      "blocks": [
+        {
+          "type": "bundle"
+        },
+        {
+          "type": "bundle"
+        },
+        {
+          "type": "bundle"
+        }
+      ]
     }
   ]
 }

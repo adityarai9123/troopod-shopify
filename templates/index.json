@@ -13,12 +13,13 @@
       "type": "hero",
       "settings": {
         "background_image": "shopify://shop_images/dark-image.png",
-        "product_image": "shopify://shop_images/gift_card.png",
         "eyebrow": "THE ASSIGNMENT",
         "heading": "Hello Aditya",
         "description": "Turn it into production sections a merchant's marketing team can run without a developer.",
         "button_label": "Download the file",
-        "button_link": "https://google.com"
+        "button_link": "https://google.com",
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "product_grid": {
@@ -27,38 +28,24 @@
         "product_bmpfE7": {
           "type": "product",
           "settings": {
-            "image": "shopify://shop_images/theme_cover_image.jpg",
-            "title": "Mountain Ride",
-            "price": "4999",
-            "link": ""
+            "product": "gift-card"
           }
         },
         "product_pWgag8": {
           "type": "product",
           "settings": {
-            "image": "shopify://shop_images/gift_card.png",
-            "title": "Gift",
-            "price": "20",
-            "link": ""
-          }
-        },
-        "product_q6cKGW": {
-          "type": "product",
-          "settings": {
-            "image": "shopify://shop_images/coffee-mug.png",
-            "title": "Coffee Mug",
-            "price": "$19.99",
-            "link": ""
+            "product": "selling-plans-ski-wax"
           }
         }
       },
       "block_order": [
         "product_bmpfE7",
-        "product_pWgag8",
-        "product_q6cKGW"
+        "product_pWgag8"
       ],
       "settings": {
-        "heading": "Featured Products"
+        "heading": "Featured Products",
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "best_selling_combos": {
@@ -67,28 +54,19 @@
         "combo_7KTyXP": {
           "type": "combo",
           "settings": {
-            "image": "shopify://shop_images/shoe-combos.png",
-            "title": "Shoe Combo",
-            "price": "5999",
-            "link": ""
+            "product": "the-collection-snowboard-oxygen"
           }
         },
         "combo_ey63Ch": {
           "type": "combo",
           "settings": {
-            "image": "shopify://shop_images/cutlery-combo.png",
-            "title": "Cutlery Combo",
-            "price": "₹2999",
-            "link": ""
+            "product": "the-compare-at-price-snowboard"
           }
         },
         "combo_699DNd": {
           "type": "combo",
           "settings": {
-            "image": "shopify://shop_images/gaming-set-combo.png",
-            "title": "Gaming Combo",
-            "price": "₹2999",
-            "link": ""
+            "product": "the-multi-location-snowboard"
           }
         }
       },
@@ -98,7 +76,9 @@
         "combo_699DNd"
       ],
       "settings": {
-        "heading": "Best Selling Combos"
+        "heading": "Best Selling Combos",
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "bundles": {
@@ -107,38 +87,24 @@
         "bundle_yBmDTH": {
           "type": "bundle",
           "settings": {
-            "title": "Dinner Bundle",
-            "description": "Ghar jaisa Swaad.",
-            "price": "₹4999",
-            "link": ""
+            "product": "the-videographer-snowboard"
           }
         },
         "bundle_Nw3cGf": {
           "type": "bundle",
           "settings": {
-            "title": "Lunch Bundle",
-            "description": "Some meals are meant to touch your soul.",
-            "price": "₹4999",
-            "link": ""
-          }
-        },
-        "bundle_JtCEyf": {
-          "type": "bundle",
-          "settings": {
-            "title": "Starter Bundle",
-            "description": "Everything you need to get started.",
-            "price": "₹4999",
-            "link": ""
+            "product": "the-multi-managed-snowboard"
           }
         }
       },
       "block_order": [
         "bundle_yBmDTH",
-        "bundle_Nw3cGf",
-        "bundle_JtCEyf"
+        "bundle_Nw3cGf"
       ],
       "settings": {
-        "heading": "Bundles"
+        "heading": "Bundles",
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     },
     "reviews_rail": {
@@ -148,31 +114,36 @@
           "type": "review",
           "settings": {
             "review": "Amazing quality nice product",
-            "author": "John Doe John"
+            "author": "John Doe John",
+            "rating": 5
+          }
+        },
+        "review_wrKwen": {
+          "type": "review",
+          "settings": {
+            "review": "Amazing quality!",
+            "author": "John Doe",
+            "rating": 5
           }
         },
         "review_Vhyck7": {
           "type": "review",
           "settings": {
             "review": "Nice Product.",
-            "author": "Doe John"
-          }
-        },
-        "review_4JGDC6": {
-          "type": "review",
-          "settings": {
-            "review": "Amazing quality!",
-            "author": "John Doe"
+            "author": "Doe John",
+            "rating": 5
           }
         }
       },
       "block_order": [
         "review_HjmTM9",
-        "review_Vhyck7",
-        "review_4JGDC6"
+        "review_wrKwen",
+        "review_Vhyck7"
       ],
       "settings": {
-        "heading": "Customer Reviews"
+        "heading": "Customer Reviews",
+        "padding_top": 40,
+        "padding_bottom": 40
       }
     }
   },

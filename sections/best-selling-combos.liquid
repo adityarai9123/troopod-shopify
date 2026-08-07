@@ -1,7 +1,12 @@
 {{ 'best-selling-combos.css' | asset_url | stylesheet_tag }}
 
-<section class="combos">
-
+<section
+  class="combos"
+  style="
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  "
+>
   <div class="page-width">
 
     <h2 class="combos__title">
@@ -10,28 +15,38 @@
 
     <div class="combos__grid">
 
-      {% for block in section.blocks %}
+      {% for block in section.blocks limit: 6 %}
 
-      <div class="combo-card" {{ block.shopify_attributes }}>
+        {% assign product = block.settings.product %}
 
-        {% if block.settings.image != blank %}
-          {{
-            block.settings.image
-            | image_url: width:600
-            | image_tag:
-            loading:'lazy'
-          }}
+        {% if product != blank %}
+
+          <div class="combo-card" {{ block.shopify_attributes }}>
+
+            {{
+              product.featured_image
+              | image_url: width: 1200
+              | image_tag:
+                loading: 'lazy',
+                widths: '400,600,800,1200',
+                sizes: '(max-width:749px) 100vw, 50vw',
+                alt: product.title
+            }}
+
+            <h3>{{ product.title }}</h3>
+
+            <p>{{ product.price | money }}</p>
+
+            <a
+              href="{{ product.url }}"
+              aria-label="View {{ product.title }}"
+            >
+              Buy Now
+            </a>
+
+          </div>
+
         {% endif %}
-
-        <h3>{{ block.settings.title }}</h3>
-
-        <p>{{ block.settings.price }}</p>
-
-        <a href="{{ block.settings.link }}">
-          Buy Now
-        </a>
-
-      </div>
 
       {% endfor %}
 
@@ -50,6 +65,24 @@
       "id": "heading",
       "label": "Heading",
       "default": "Best Selling Combos"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "default": 40
     }
   ],
   "blocks": [
@@ -58,33 +91,28 @@
       "name": "Combo",
       "settings": [
         {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title",
-          "default": "Gaming Combo"
-        },
-        {
-          "type": "text",
-          "id": "price",
-          "label": "Price",
-          "default": "₹2999"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "Link"
+          "type": "product",
+          "id": "product",
+          "label": "Select Product"
         }
       ]
     }
   ],
+  "max_blocks": 6,
   "presets": [
     {
-      "name": "Best Selling Combos"
+      "name": "Best Selling Combos",
+      "blocks": [
+        {
+          "type": "combo"
+        },
+        {
+          "type": "combo"
+        },
+        {
+          "type": "combo"
+        }
+      ]
     }
   ]
 }

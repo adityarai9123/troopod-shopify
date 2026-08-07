@@ -1,0 +1,33 @@
+{% assign product = product_card %}
+
+{% if product != blank %}
+
+<div class="product-card">
+
+  {% if product.featured_image %}
+    {{
+      product.featured_image
+      | image_url: width: 600
+      | image_tag:
+        loading: 'lazy',
+        widths: '300,400,600,800',
+        sizes: '(max-width: 768px) 100vw, 33vw',
+        alt: product.title
+    }}
+  {% endif %}
+
+  <h3>{{ product.title }}</h3>
+
+  <p>{{ product.price | money }}</p>
+
+  <a
+    href="{{ product.url }}"
+    class="product-card__button"
+    aria-label="View {{ product.title }}"
+  >
+    View Product
+  </a>
+
+</div>
+
+{% endif %}
