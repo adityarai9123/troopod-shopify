@@ -1,75 +1,78 @@
 .hero{
-position:relative;
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-padding:120px 30px;
-overflow:hidden;
+    position:relative;
+    background-size:cover;
+    background-position:right center;
+    background-repeat:no-repeat;
+    min-height:720px;
+    display:flex;
+    align-items:center;
 }
 
 .hero__overlay{
-position:absolute;
-inset:0;
-background:rgba(10,8,18,.72);
+    position:absolute;
+    inset:0;
+    background:rgba(8,8,15,.72);
 }
 
 .hero__container{
-position:relative;
-z-index:2;
-max-width:1280px;
-margin:auto;
+    position:relative;
+    z-index:2;
+    max-width:1200px;
+    width:100%;
+    margin:auto;
+    padding:0 40px;
 
-display:grid;
-grid-template-columns:1.2fr 1fr;
-align-items:center;
-gap:70px;
-}
-
-.hero__content{
-color:white;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:60px;
 }
 
 .hero__eyebrow{
-font-size:13px;
-letter-spacing:4px;
-text-transform:uppercase;
-color:#8d86b5;
-margin-bottom:20px;
+    color:#9b8cff;
+    letter-spacing:4px;
+    font-size:14px;
+    text-transform:uppercase;
+    margin-bottom:20px;
 }
 
 .hero__heading{
-font-size:72px;
-font-weight:700;
-line-height:1.05;
-margin-bottom:30px;
+    font-size:72px;
+    line-height:1.05;
+    color:white;
+    font-weight:700;
+    margin-bottom:24px;
 }
 
 .hero__description{
-font-size:22px;
-line-height:1.7;
-color:#d5cdef;
-max-width:650px;
-margin-bottom:40px;
+    color:#d9d9e7;
+    font-size:22px;
+    line-height:1.6;
+    margin-bottom:40px;
 }
 
 .hero__button{
-display:inline-block;
-padding:18px 34px;
-background:#6c3df4;
-color:white;
-text-decoration:none;
-border-radius:10px;
-font-weight:600;
-transition:.3s;
+    display:inline-block;
+    background:#7c4dff;
+    color:white;
+    text-decoration:none;
+
+    padding:18px 42px;
+
+    border-radius:14px;
+
+    font-weight:600;
+
+    transition:.3s;
 }
 
 .hero__button:hover{
-background:#8757ff;
+    background:#6236e8;
 }
 
 .hero__image img{
-width:100%;
-display:block;
+    width:100%;
+    display:block;
 }
 
 @media(max-width:900px){
@@ -80,21 +83,27 @@ text-align:center;
 }
 
 .hero__heading{
-font-size:46px;
+font-size:48px;
 }
 
-.hero__description{
-font-size:18px;
-margin:auto;
-margin-bottom:35px;
+.hero{
+padding:80px 0;
+min-height:auto;
 }
 
-.hero__button{
-margin:auto;
 }
 
 .hero__image{
-margin-top:50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
+.hero__product-image{
+    max-width:420px;
+    width:100%;
+}
+
+.hero__content{
+    max-width:560px;
 }

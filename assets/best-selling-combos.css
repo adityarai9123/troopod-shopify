@@ -1,0 +1,57 @@
+.combos{
+    padding:100px 40px;
+}
+
+.combos__title{
+    text-align:center;
+    font-size:42px;
+    margin-bottom:50px;
+}
+
+.combos__grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.combo-card{
+    background:white;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.combo-card img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+}
+
+.combo-card h3{
+    margin:20px;
+}
+
+.combo-card p{
+    margin:0 20px;
+    color:#6f46ff;
+    font-weight:bold;
+}
+
+.combo-card a{
+    display:block;
+    margin:20px;
+    text-align:center;
+    padding:14px;
+    border-radius:10px;
+    background:#6f46ff;
+    color:white;
+    text-decoration:none;
+}
+
+@media(max-width:900px){
+
+.combos__grid{
+grid-template-columns:1fr;
+}
+
+}

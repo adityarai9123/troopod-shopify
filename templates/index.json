@@ -1,24 +1,179 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "hero",
-      "settings": {}
+      "settings": {
+        "background_image": "shopify://shop_images/dark-image.png",
+        "product_image": "shopify://shop_images/gift_card.png",
+        "eyebrow": "THE ASSIGNMENT",
+        "heading": "Hello Aditya",
+        "description": "Turn it into production sections a merchant's marketing team can run without a developer.",
+        "button_label": "Download the file",
+        "button_link": "https://google.com"
+      }
     },
     "product_grid": {
       "type": "product-grid",
-      "settings": {}
+      "blocks": {
+        "product_bmpfE7": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/theme_cover_image.jpg",
+            "title": "Mountain Ride",
+            "price": "4999",
+            "link": ""
+          }
+        },
+        "product_pWgag8": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/gift_card.png",
+            "title": "Gift",
+            "price": "20",
+            "link": ""
+          }
+        },
+        "product_q6cKGW": {
+          "type": "product",
+          "settings": {
+            "image": "shopify://shop_images/coffee-mug.png",
+            "title": "Coffee Mug",
+            "price": "$19.99",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "product_bmpfE7",
+        "product_pWgag8",
+        "product_q6cKGW"
+      ],
+      "settings": {
+        "heading": "Featured Products"
+      }
     },
     "best_selling_combos": {
       "type": "best-selling-combos",
-      "settings": {}
+      "blocks": {
+        "combo_7KTyXP": {
+          "type": "combo",
+          "settings": {
+            "image": "shopify://shop_images/shoe-combos.png",
+            "title": "Shoe Combo",
+            "price": "5999",
+            "link": ""
+          }
+        },
+        "combo_ey63Ch": {
+          "type": "combo",
+          "settings": {
+            "image": "shopify://shop_images/cutlery-combo.png",
+            "title": "Cutlery Combo",
+            "price": "₹2999",
+            "link": ""
+          }
+        },
+        "combo_699DNd": {
+          "type": "combo",
+          "settings": {
+            "image": "shopify://shop_images/gaming-set-combo.png",
+            "title": "Gaming Combo",
+            "price": "₹2999",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "combo_7KTyXP",
+        "combo_ey63Ch",
+        "combo_699DNd"
+      ],
+      "settings": {
+        "heading": "Best Selling Combos"
+      }
     },
     "bundles": {
       "type": "bundles",
-      "settings": {}
+      "blocks": {
+        "bundle_yBmDTH": {
+          "type": "bundle",
+          "settings": {
+            "title": "Dinner Bundle",
+            "description": "Ghar jaisa Swaad.",
+            "price": "₹4999",
+            "link": ""
+          }
+        },
+        "bundle_Nw3cGf": {
+          "type": "bundle",
+          "settings": {
+            "title": "Lunch Bundle",
+            "description": "Some meals are meant to touch your soul.",
+            "price": "₹4999",
+            "link": ""
+          }
+        },
+        "bundle_JtCEyf": {
+          "type": "bundle",
+          "settings": {
+            "title": "Starter Bundle",
+            "description": "Everything you need to get started.",
+            "price": "₹4999",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "bundle_yBmDTH",
+        "bundle_Nw3cGf",
+        "bundle_JtCEyf"
+      ],
+      "settings": {
+        "heading": "Bundles"
+      }
     },
     "reviews_rail": {
       "type": "reviews-rail",
-      "settings": {}
+      "blocks": {
+        "review_HjmTM9": {
+          "type": "review",
+          "settings": {
+            "review": "Amazing quality nice product",
+            "author": "John Doe John"
+          }
+        },
+        "review_Vhyck7": {
+          "type": "review",
+          "settings": {
+            "review": "Nice Product.",
+            "author": "Doe John"
+          }
+        },
+        "review_4JGDC6": {
+          "type": "review",
+          "settings": {
+            "review": "Amazing quality!",
+            "author": "John Doe"
+          }
+        }
+      },
+      "block_order": [
+        "review_HjmTM9",
+        "review_Vhyck7",
+        "review_4JGDC6"
+      ],
+      "settings": {
+        "heading": "Customer Reviews"
+      }
     }
   },
   "order": [

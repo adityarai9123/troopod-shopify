@@ -1,0 +1,101 @@
+{{ 'bundles.css' | asset_url | stylesheet_tag }}
+
+<section class="bundles">
+
+  <div class="page-width">
+
+    <h2>{{ section.settings.heading }}</h2>
+
+    <div class="bundles__grid">
+
+      {% for block in section.blocks %}
+
+      <div class="bundle-card" {{ block.shopify_attributes }}>
+
+        {% if block.settings.image != blank %}
+          {{
+            block.settings.image
+            | image_url: width:600
+            | image_tag:
+            loading:'lazy'
+          }}
+        {% endif %}
+
+        <div class="bundle-card__content">
+
+          <h3>{{ block.settings.title }}</h3>
+
+          <p>{{ block.settings.description }}</p>
+
+          <span>{{ block.settings.price }}</span>
+
+          <a href="{{ block.settings.link }}">
+            Shop Bundle
+          </a>
+
+        </div>
+
+      </div>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Bundles",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Bundles"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "bundle",
+      "name": "Bundle",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Starter Bundle"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Everything you need to get started."
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price",
+          "default": "₹4999"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Button Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Bundles"
+    }
+  ]
+}
+{% endschema %}

@@ -35,11 +35,12 @@
     <div class="hero__image">
 
       {% if section.settings.product_image != blank %}
-        {{
-          section.settings.product_image
-          | image_url: width: 800
-          | image_tag
-        }}
+        {{ section.settings.product_image
+        | image_url: width:800
+        | image_tag:
+        loading:'lazy',
+        class:'hero__product-image'
+        }}  
       {% endif %}
 
     </div>

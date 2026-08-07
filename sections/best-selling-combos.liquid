@@ -1,0 +1,91 @@
+{{ 'best-selling-combos.css' | asset_url | stylesheet_tag }}
+
+<section class="combos">
+
+  <div class="page-width">
+
+    <h2 class="combos__title">
+      {{ section.settings.heading }}
+    </h2>
+
+    <div class="combos__grid">
+
+      {% for block in section.blocks %}
+
+      <div class="combo-card" {{ block.shopify_attributes }}>
+
+        {% if block.settings.image != blank %}
+          {{
+            block.settings.image
+            | image_url: width:600
+            | image_tag:
+            loading:'lazy'
+          }}
+        {% endif %}
+
+        <h3>{{ block.settings.title }}</h3>
+
+        <p>{{ block.settings.price }}</p>
+
+        <a href="{{ block.settings.link }}">
+          Buy Now
+        </a>
+
+      </div>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Best Selling Combos",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Best Selling Combos"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "combo",
+      "name": "Combo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Gaming Combo"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price",
+          "default": "₹2999"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Best Selling Combos"
+    }
+  ]
+}
+{% endschema %}

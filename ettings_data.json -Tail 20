@@ -1,0 +1,25 @@
+warning: in the working copy of 'config/settings_data.json', LF will be replaced by CRLF the next time Git touches it
+[1mdiff --git a/config/settings_data.json b/config/settings_data.json[m
+[1mindex 57148db6..8f2a6371 100644[m
+[1m--- a/config/settings_data.json[m
+[1m+++ b/config/settings_data.json[m
+[36m@@ -1,12 +1,3 @@[m
+[31m-/*[m
+[31m- * ------------------------------------------------------------[m
+[31m- * IMPORTANT: The contents of this file are auto-generated.[m
+[31m- *[m
+[31m- * This file may be updated by the Shopify admin theme editor[m
+[31m- * or related systems. Please exercise caution as any changes[m
+[31m- * made to this file may be overwritten.[m
+[31m- * ------------------------------------------------------------[m
+[31m- */[m
+ {[m
+   "current": "Dawn",[m
+   "presets": {[m
+[36m@@ -202,3 +193,5 @@[m
+     }[m
+   }[m
+ }[m
+[32m+[m
+[32m+[m[32mhero[m
+\ No newline at end of file[m

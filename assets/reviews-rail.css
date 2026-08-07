@@ -1,0 +1,35 @@
+.reviews{
+    padding:100px 40px;
+}
+
+.reviews h2{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:42px;
+}
+
+.reviews__grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.review-card{
+    background:white;
+    padding:30px;
+    border-radius:16px;
+    box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
+
+.review-card h4{
+    margin-top:20px;
+    color:#6f46ff;
+}
+
+@media(max-width:900px){
+
+.reviews__grid{
+grid-template-columns:1fr;
+}
+
+}
