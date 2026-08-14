@@ -1,4 +1,4 @@
-# Troopod Shopify Assignment
+# Troopod Shopify 
 
 This repository contains my submission for the Troopod Shopify Developer assignment.
 
